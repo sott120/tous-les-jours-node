@@ -1,0 +1,50 @@
+<main class="notice_write">
+    <div class="circle circle_animate"></div>
+    <section class="title">
+        <h2 class="title_h2">Community</h2>
+        <ul class="title_nav1">
+            <li><a class="active" href="">공지사항</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </section>
+    <form method="POST" action="/write">
+        <div class="form_wrap">
+            <div class="inner_form">
+                <% if(typeof err !== 'undefined'){ %> <% errs.forEach(()=>{ %>
+                    <h3><%=err.param%> : <%=err.meg%></h3>
+                    <% }) %> <% } %>
+                <article class="title_wrap">
+                    <div class="select">
+                        <label for="select">분류</label>
+                        <select name="noti_type" id="select">
+                            <option value="0">일반공지</option>
+                            <option value="1">전체공지</option>
+                        </select>
+                    </div>
+                    <div class="title_t">
+                        <label for="title">제목</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                </article>
+                <div class="content">
+                    <label for="content">내용</label>
+                    <textarea style="white-space:pre;" name="content" id="content" cols="30" rows="10"></textarea>
+                </div>
+                <div class="file">
+                    <span>첨부파일</span>
+                    <article>
+                        <input class="upload_name" value="첨부파일" placeholder="첨부파일">
+                        <label for="file">파일첨부</label>
+                        <input type="file" id="file">
+                    </article>
+                </div>
+                <div class="password">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="pw">
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="list_write_btn" value="POSTING">
+    </form>
+</main>
+<script src="../js/top_btn.js"></script>

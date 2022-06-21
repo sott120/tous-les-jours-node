@@ -1,0 +1,28 @@
+<main class="list_view">
+    <div class="circle circle_animate"></div>
+    <section class="title">
+        <h2 class="title_h2">Community</h2>
+        <ul class="title_nav1">
+            <li><a class="active" href="">공지사항</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </section>
+    <section class="list_veiw_wrap">
+        <div class="list_view_title">
+            <h3><%= row.title %></h3>
+            <p class="date_title">작성일</p>
+            <p class="date_value"><%= row.date %></p>
+        </div>
+        <div class="list_view_contents">
+            <%= row.content %>
+        </div>
+        <div class="list_view_edit">
+            <a onclick="javascript:location.href ='/notice_update?id=<%=row.id%>'" class="graybtn">수정</a>
+            <a onclick="javascript:location.href ='/notice_delete?id=<%=row.id%>'" class="graybtn">삭제</a>
+        </div>
+        <div class="list_view_btn">
+            <a href="/notice">GO TO LIST</a>
+        </div>
+    </section>
+</main>
+<script src="../js/top_btn.js"></script>

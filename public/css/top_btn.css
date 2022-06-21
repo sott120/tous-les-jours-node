@@ -1,0 +1,83 @@
+.moveTopBtn{
+    position: fixed;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    right: 50px; bottom: 94px;
+    box-shadow: 3px 3px 18px 15px rgb(0 0 0 / 5%);
+    background-color: #ffffff;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    text-align: center;
+    animation: avia_pop 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -webkit-font-smoothing: antialiased;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.moveTopBtn::before{
+    content: '';
+    background: url(../img/icon_topbtn.png) center center no-repeat;
+    background-size: 100%;
+    display: block;
+    width: 21px;
+    height: 11px;
+    margin: 17px auto 7px;
+}
+
+.moveTopBtn>span{
+    display: block;
+    font-family: "sub_type";
+    font-size: 18px;
+    font-weight: bold;
+    color: #F26A25;
+    letter-spacing: 1px;
+}
+
+#container{
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .moveTopBtn{
+        width: 56px; height: 56px;
+        padding: 16px 0;
+        box-sizing: border-box;
+        right: 30px; bottom: 30px;
+        box-shadow: 2px 2px 12px 7px rgb(0 0 0 / 5%);
+    }
+
+    .moveTopBtn::before{
+        width: 12px; height: 7px;
+        margin: 0 auto 7px;
+    }
+    
+    .moveTopBtn>span{
+        font-size: 13px;
+        letter-spacing: 0.2px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    .moveTopBtn{
+        width: 56px; height: 56px;
+        padding: 16px 0;
+        box-sizing: border-box;
+        right: 30px; bottom: 30px;
+        box-shadow: 2px 2px 12px 7px rgb(0 0 0 / 5%);
+    }
+
+    .moveTopBtn::before{
+        width: 12px; height: 7px;
+        margin: 0 auto 7px;
+    }
+    
+    .moveTopBtn>span{
+        font-size: 13px;
+        letter-spacing: 0.2px;
+    }
+    
+}

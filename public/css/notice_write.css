@@ -1,0 +1,283 @@
+.notice_write {
+    position: relative;
+    overflow: hidden;
+}
+
+.notice_write .form_wrap{
+    max-width: 1440px;
+    width: 100%;
+    background-color: rgba(7 76 67/ 10%);
+    padding: 100px 0;
+    margin: auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+.form_wrap .inner_form{
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.form_wrap select {
+    display: inline-block;
+    width: 118px;
+    height: 26px;
+    line-height: 26px;
+    box-sizing: content-box;
+    font-size: 14px;
+    letter-spacing: -1px;
+    color: #7d7d7d;
+    padding: 7px 15px;
+    margin: 0 15px 0 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 22px;
+    background: white url(../img/select-arrow.png) 85% center no-repeat;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.form_wrap .title_wrap{
+    display: flex;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.form_wrap div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_wrap label{
+    padding-bottom: 20px;
+}
+.form_wrap span{
+    padding-bottom: 20px;
+}
+
+.form_wrap input[type='text'],
+.form_wrap input[type='select'],
+.form_wrap input[type='password']{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-family: basic_type;
+    font-size: 17px;
+    box-sizing: content-box;
+    letter-spacing: -1px;
+    color: #1C1C1C;
+    padding: 7px 20px;
+    border-radius: 22px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+}
+
+.form_wrap input:focus{
+    outline : 1px solid #e0e0e0
+}
+
+.form_wrap .title_t{
+    width: 100%;
+}
+
+.form_wrap .content{
+    margin-bottom: 30px;
+}
+
+.form_wrap .content textarea{
+    resize: none;
+    width: 100%;
+    height: 500px;
+    line-height: 26px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: -1px;
+    color: #1C1C1C;
+    padding: 20px;
+    border-radius: 22px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+}
+
+.form_wrap .content textarea:focus{
+    outline : 1px solid #e0e0e0
+}
+
+.form_wrap .file{
+    margin-bottom: 30px;
+}
+
+.form_wrap .file article{
+    display: flex;
+    flex-wrap: nowrap;
+} 
+
+.form_wrap input[type='file']{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    cursor: pointer;
+}
+
+.form_wrap .upload_name{
+    display: inline-block;
+    max-width: 380px;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    box-sizing: content-box;
+    letter-spacing: -1px;
+    color: #7d7d7d;
+    padding: 7px 20px;
+    border-radius: 22px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+}
+
+.form_wrap .file label {
+    display: inline-block;
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+    letter-spacing: -1px;
+    color: #fff;
+    padding: 7px 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 22px;
+    background-color: #074C43;
+    text-align: center;
+    outline: none;
+    margin-left: -100px;
+}
+
+.form_wrap .password input{
+    max-width: 300px;
+}
+
+.list_write_btn {
+    font-family: sub_type;
+    display: block;
+    margin: auto;
+    margin: 50px auto 100px ;
+    width: 143px;
+    height: 50px;
+    line-height: 49px;
+    font-size: 17px;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 0;
+    padding-right: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #f26a25 url(../img/write-btn.png) no-repeat 77% center;
+}
+
+/*--------------------media query width 1440px--------------------*/
+@media only screen and (max-width: 1440px) {
+    .notice_write .form_wrap{
+        max-width: calc(100% - 60px);
+    }
+}
+
+/*--------------------media query width 989px--------------------*/
+@media only screen and (max-width: 989px) {
+
+}
+
+/*--------------------media query width 767px--------------------*/
+@media only screen and (max-width: 767px) {
+    .notice_write .form_wrap{
+        max-width: calc(100% - 40px);
+        padding: 50px 0;
+        font-size: 15px;
+    }
+
+    .form_wrap .inner_form{
+        padding: 0 30px;
+
+    }
+
+    .form_wrap .title_wrap{
+        flex-direction: column;
+    }
+
+    .form_wrap .select{
+        margin-bottom: 30px;
+    }
+
+    .form_wrap select{
+        height: 20px;
+        line-height: 20px;
+    }
+    
+    .form_wrap label{
+        font-size: 15px;
+        padding-bottom: 5px;
+    }
+
+    .form_wrap span{
+        font-size: 15px;
+        padding-bottom: 5px;
+    }
+    
+    .form_wrap input[type='text'],
+    .form_wrap input[type='select'],
+    .form_wrap input[type='password']{
+        font-size: 15px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .form_wrap .content textarea{
+        height: 300px;
+    }
+
+    .form_wrap .upload_name{
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .form_wrap .file label{
+        width: 68px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    .notice_write button {
+        font-family: sub_type;
+        display: block;
+        margin: auto;
+        margin: 30px auto 70px;
+        width: 100px;
+        height: 40px;
+        line-height: 39px;
+        border-radius: 50px;
+        font-size: 12px;
+        padding-right: 16px;
+        background: #f26a25 url(../img/write-btn.png) no-repeat 85% center;
+    }
+}
+
+/*--------------------media query width 480px--------------------*/
+@media only screen and (max-width: 480px) {
+    .form_wrap .password input{
+        max-width: 100%;
+    }
+
+}

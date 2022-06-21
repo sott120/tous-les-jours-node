@@ -1,0 +1,291 @@
+.bd_none {
+    border: 0 !important;
+}
+
+.clear {
+    overflow: hidden;
+}
+
+.signup_wrap {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    max-width: 570px;
+    margin: 0 auto 30px;
+}
+
+.signup_wrap .signup_deco {
+    text-align: center;
+}
+
+.signup_deco img {
+    padding: 30px 20px 0;
+}
+
+.signup_deco p {
+    border-bottom: 1px solid #ddd;
+    color: #777;
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+    padding: 30px 20px 30px;
+}
+
+.signup_box {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    position: relative;
+}
+
+.signup_box .left {
+    float: left;
+}
+
+.signup_box .left.clear {
+    margin-right: 10px;
+}
+
+.signup_box label {
+    position: absolute;
+    left: -9999px;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.signup_box input[type='text'],
+.signup_box input[type='password'] {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 530px;
+    padding: 15px;
+    outline: none;
+}
+.signup_box div.radio_wrap {
+    display: inline-flex;
+    align-items: center;
+}
+input[type='radio'] {
+    appearance: none;
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 47px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+
+input[type='radio']:checked {
+    appearance: none;
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 47px;
+    background-color: #f4f4f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+    color: #333;
+}
+
+.signup_box .left .radio.radio_left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0;
+}
+
+.signup_box .left .radio.radio_left::after {
+    content: '남';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-family: basic_type;
+    color: #777;
+}
+
+.signup_box .left .radio.radio_right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin: 0 -4px;
+}
+
+.signup_box .left .radio.radio_right::after {
+    content: '여';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-family: basic_type;
+    color: #777;
+}
+
+.signup_box .left .radio[type='radio']:checked::after {
+    color: #333;
+    font-weight: 500;
+}
+
+.signup_box .radio:hover::after {
+    text-decoration: underline;
+}
+
+.signup_box strong {
+    font-weight: 500;
+    color: #1c1c1c;
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.signup_box span {
+    color: #074c43;
+    vertical-align: baseline;
+    margin-left: 5px;
+}
+.signup_box .user_nm {
+    width: 100%;
+    float: left;
+}
+
+.signup_box .select_birth_box {
+    float: left;
+    width: 32%;
+    margin-right: 1.76%;
+}
+
+.select_birth_box.month {
+    width: 25%;
+}
+
+.select_birth_box.day {
+    width: 25%;
+}
+
+.signup_box select {
+    display: block;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 16px 15px;
+    background: transparent;
+    background: white url(../img/select-arrow.png) 85% center no-repeat;
+}
+.sign_btn {
+    display: block;
+    color: #fff;
+    width: 100%;
+    font-family: basic_type;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+    padding: 16px 0;
+    background-color: #074c43;
+    margin: auto;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+/* pass, warnning effect */
+
+.input_pass {
+    border: 1px solid #08a600 !important;
+}
+
+.input_warn {
+    border: 1px solid #ed1c24 !important;
+}
+
+.input_warn_txt {
+    color: #ed1c24;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 15px;
+    display: none;
+}
+
+/*--------------------media query width 767px--------------------*/
+@media only screen and (max-width: 767px) {
+    .sign_btn {
+        margin-bottom: 70px !important;
+    }
+}
+
+/*--------------------media query width 570px--------------------*/
+@media only screen and (max-width: 570px) {
+    .signup_wrap {
+        max-width: calc(100% - 60px);
+        margin: 0 auto 20px;
+    }
+
+    .sign_btn {
+        font-size: 17px;
+        padding: 10px 0;
+    }
+}
+
+/*--------------------media query width 480px--------------------*/
+@media only screen and (max-width: 480px) {
+    .signup_wrap {
+        max-width: calc(100% - 40px);
+    }
+
+    .signup_box {
+        padding: 15px;
+    }
+
+    .signup_box input[type='text'] {
+        padding: 10px;
+    }
+
+    input[type='radio'],
+    input[type='radio']:checked {
+        width: 40px;
+        height: 37px;
+    }
+
+    .signup_box .left .radio.radio_left::after {
+        font-size: 14px;
+    }
+
+    .signup_box .left .radio.radio_right {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin: 0 -4px;
+    }
+
+    .signup_box .left .radio.radio_right::after {
+        font-size: 14px;
+    }
+
+    .signup_box select {
+        padding: 9px 15px;
+    }
+
+    .signup_box .select_birth_box {
+        float: left;
+        width: 33%;
+        margin-right: 1.76%;
+    }
+
+    .select_birth_box.month {
+        width: 30%;
+    }
+
+    .select_birth_box.day {
+        width: 30%;
+    }
+}

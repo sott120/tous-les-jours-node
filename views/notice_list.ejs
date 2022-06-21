@@ -1,0 +1,139 @@
+<main class="notice">
+    <div class="circle circle_animate"></div>
+    <section class="title">
+        <h2 class="title_h2">Community</h2>
+        <ul class="title_nav1">
+            <li><a class="active" href="">공지사항</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </section>
+    <section class="notice_wrap">
+        <div class="notice_header">
+            <div class="notice_count">총 <span><%= count %></span>건의 게시물이 있습니다.</div>
+            <form class="notice_search">
+                <select name="" id="">
+                    <option value="">전체</option>
+                    <option value="">제목</option>
+                    <option value="">내용</option>
+                </select>
+                <input type="text" placeholder="검색어를 입력해주세요." />
+                <button>검색</button>
+            </form>
+        </div>
+        <table class="notice_list">
+            <colgroup>
+                <col class="num" />
+                <col class="title" />
+                <col class="date" />
+            </colgroup>
+            <thead>
+                <tr class="noti_none">
+                    <td class="noti_none">번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="notice_list_noti">
+                    <td class="notice_list_num noti_none">
+                        <img width="30px" src="../img/icon_board_notice.png" alt="공지" />
+                    </td>
+                    <td class="notice_list_title"><a href="/notice_view">CJ ONE 멤버십 서비스 정책 변경 안내</a></td>
+                    <td class="notice_list_date">2018.01.29</td>
+                </tr>
+                <tr class="notice_list_noti">
+                    <td class="notice_list_num noti_none">
+                        <img width="30px" src="../img/icon_board_notice.png" alt="공지" />
+                    </td>
+                    <td class="notice_list_title"><a href="">뚜레쥬르 모바일 제품 교환권 이용 안내</a></td>
+                    <td class="notice_list_date">2016.03.31</td>
+                </tr>
+                <% rows.forEach((row, index) => { %>
+                    <tr>
+                        <td class="notice_list_num noti_none"><%= row.RNUM %></td>
+                        <td class="notice_list_title"><a onclick="javascript:location.href ='/notice_view?id=<%=row.id%>'"><%= row.title %></a></td>
+                        <td class="notice_list_date"><%= row.date %></td>
+                    </tr>
+                <% }) %>
+                <tr>
+                    <td class="notice_list_num noti_none">210</td>
+                    <td class="notice_list_title"><a href="">2022년 가정의달 플랜트러브 장바구니 출시 안내</a></td>
+                    <td class="notice_list_date">2022.04.20</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">209</td>
+                    <td class="notice_list_title"><a href="">CJ푸드빌 위치기반서비스 이용약관 개정 고지</a></td>
+                    <td class="notice_list_date">2022.03.25</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">208</td>
+                    <td class="notice_list_title"><a href="">2021년 크리스마스 [사랑 뿜뿜 크리스마스! 나와 어울리는 쿠키는] 이벤트 당첨자 발표</a></td>
+                    <td class="notice_list_date">2022.01.14</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">207</td>
+                    <td class="notice_list_title"><a href="">CJ푸드빌 개인정보처리방침 개정 고지</a></td>
+                    <td class="notice_list_date">2022.01.14</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">206</td>
+                    <td class="notice_list_title"><a href="">2022년 신년 뚜레쥬르 티거 굿즈[티거_데코 스티커] 출시 안내</a></td>
+                    <td class="notice_list_date">2022.01.04</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">205</td>
+                    <td class="notice_list_title"><a href="">2021년 크리스마스 뚜레쥬르X쿠키런:킹덤 콜라보 굿즈[오로라 머그] 출시 안내</a></td>
+                    <td class="notice_list_date">2021.12.14</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">204</td>
+                    <td class="notice_list_title"><a href="">2021년 크리스마스 뚜레쥬르X쿠키런:킹덤 콜라보 굿즈[접시 세트] 출시 안내</a></td>
+                    <td class="notice_list_date">2021.11.23</td>
+                </tr>
+                <tr>
+                    <td class="notice_list_num noti_none">203</td>
+                    <td class="notice_list_title"><a href="">CJ푸드빌 개인정보처리방침 개정 고지</a></td>
+                    <td class="notice_list_date">2021.09.09</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="notice_write" class="graybtn">글작성</a>
+        <ul class="page">
+            <li class="page_prev">
+                <a href="">
+                    <img src="../img/kprev-icon.jpg" />
+                </a>
+            </li>
+            <li class="page_active">
+                <a href=""> 1 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 2 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 3 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 4 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 5 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 6 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 7 </a>
+            </li>
+            <li class="noti_none">
+                <a href=""> 8 </a>
+            </li>
+            <li class="page_next">
+                <a href="">
+                    <img src="../img/knext-icon.jpg" />
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+<script src="../js/top_btn.js"></script>
