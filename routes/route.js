@@ -14,7 +14,10 @@ router.get("/", (req, res) => {
     res.render("main"); //메인페이지 지정
 });
 
-router.post('/write', [check('content').isByteLength({min: 1, max: 5000})], //그냥 islength도 가능
+router.post('/write', [check('content').isByteLength({
+        min: 1,
+        max: 5000
+    })], //그냥 islength도 가능
     function (req, res, next) {
         let errs = validationResult(req);
         console.log(errs); //콘솔 에러 출력하기
@@ -51,7 +54,10 @@ router.get('/notice_update', (req, res) => {
     });
 });
 
-router.post('/update', [check('content').isByteLength({min: 1, max: 5000})], (req, res) => {
+router.post('/update', [check('content').isByteLength({
+    min: 1,
+    max: 5000
+})], (req, res) => {
     let errs = validationResult(req);
     let param = JSON.parse(JSON.stringify(req.body));
     let id = param['id'];
@@ -80,24 +86,34 @@ router.get('/notice_delete', (req, res) => {
     });
 });
 
-router.get("/notice", (req,res) => {
-    db.countAll((count)=>{ //리스트 갯수 체크
+router.get("/notice", (req, res) => {
+    db.countAll((count) => { //리스트 갯수 체크
         db.getAllMemos((rows) => {
-            res.render('notice_list', { rows: rows, count : count });
+            res.render('notice_list', {rows: rows, count: count});
         });
     });
-}) 
+})
 
-router.get("/notice_view", (req,res) => {
-        let id = req.query.id;
-        db.getMemoById(id, (row) => {
-            if (typeof id === 'undefined' || row.length <= 0) {
-                res.status(404).json({ error: 'undefined memo' });
-            } else {
-                res.render('notice_view', { row:row[0] });
-            }
-        });
-    })
+//!!!!page test!!!!
+// router.get('/notice/:page', (req, res, next)=> {
+//     db.getAllMemos();
+// });
+//!!!!page test!!!!
+
+router.get("/notice_view", (req, res) => {
+    let id = req.query.id;
+    db.getMemoById(id, (row) => {
+        if (typeof id === 'undefined' || row.length <= 0) {
+            res.status(404).json({
+                error: 'undefined memo'
+            });
+        } else {
+            res.render('notice_view', {
+                row: row[0]
+            });
+        }
+    });
+})
 
 router.get("/notice_write", (req, res) => {
     res.render("notice_write");
