@@ -79,17 +79,19 @@ router.post('/update', [check('content').isByteLength({
     }
 });
 
-router.get('/notice_delete', (req, res) => {
-    let id = req.query.id;
-    db.deleteMemoById(id, () => {
-        res.redirect('/notice');
-    });
-});
+// router.get('/notice_delete', (req, res) => {
+//     let id = req.query.id;
+//     db.deleteMemoById(id, () => {
+//         res.redirect('/notice');
+//     });
+// });
 
-router.get("/notice", (req, res) => {
+router.get("/notice/:page", (req, res, next) => {
+    var page = req.params.page;
+    pool
     db.countAll((count) => { //리스트 갯수 체크
         db.getAllMemos((rows) => {
-            res.render('notice_list', {rows: rows, count: count});
+            res.render('notice_list', {rows: rows, count: count, page : page, leng : Object.keys(rows).length-1, pageNum : 10, pass : true});
         });
     });
 })

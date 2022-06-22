@@ -48,6 +48,24 @@
                     <td class="notice_list_title"><a href="">뚜레쥬르 모바일 제품 교환권 이용 안내</a></td>
                     <td class="notice_list_date">2016.03.31</td>
                 </tr>
+                <% 
+                for(var i = (page*pageNum)-pageNum; i<(page*pageNum); i++){
+                    if(i > lang){
+                        i++;
+                    } else {
+                        var item = rows[i];
+                %>
+                    <tr>
+                        <td class="notice_list_num noti_none"><%= item.RNUM %></td>
+                        <td class="notice_list_title"><a onclick="javascript:location.href ='/notice_view?id=<%=row.id%>'"><%= item.title %></a></td>
+                        <td class="notice_list_date"><%= item.date %></td>
+                    </tr>
+
+                <%    
+                    }
+                }
+                %>
+
                 <% rows.forEach((row, index) => { %>
                     <tr>
                         <td class="notice_list_num noti_none"><%= row.RNUM %></td>
@@ -55,6 +73,17 @@
                         <td class="notice_list_date"><%= row.date %></td>
                     </tr>
                 <% }) %>
+                <tr>
+                    <td colspan="5">
+                        <%
+                            for(var j = 0; j<rows.length/10; j++){
+                        %>
+                            [ <a herf="/notice/<%= j+1 %>"><%= j+1 %></a> ]
+                        <%
+                            }
+                        %>
+                    </td>
+                </tr>
                 <!-- <tr>
                     <td class="notice_list_num noti_none">210</td>
                     <td class="notice_list_title"><a href="">2022년 가정의달 플랜트러브 장바구니 출시 안내</a></td>
