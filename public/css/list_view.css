@@ -77,6 +77,7 @@
     text-align: center;
     color: #666;
     line-height: 25px;
+    white-space: pre-wrap;
 }
 
 .list_view_contents img {
