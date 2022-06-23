@@ -13,9 +13,7 @@
             <p class="date_title">작성일</p>
             <p class="date_value"><%= row.date %></p>
         </div>
-        <div class="list_view_contents">
-            <%= row.content %>
-        </div>
+        <div class="list_view_contents"><%= row.content %></div>
         <div class="list_view_edit">
             <a onclick="javascript:location.href ='/notice_update?id=<%=row.id%>'" class="graybtn">수정</a>
             <a onclick="javascript:location.href ='/notice_delete?id=<%=row.id%>'" class="graybtn">삭제</a>
