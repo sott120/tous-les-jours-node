@@ -48,42 +48,36 @@
                     <td class="notice_list_title"><a href="">뚜레쥬르 모바일 제품 교환권 이용 안내</a></td>
                     <td class="notice_list_date">2016.03.31</td>
                 </tr>
-                <% 
+                <%
                 for(var i = (page*pageNum)-pageNum; i<(page*pageNum); i++){
-                    if(i > lang){
+                    if(i > leng){
+                        console.log(page);
+                        console.log(pageNum);
                         i++;
                     } else {
+                        console.log(page);
+                        console.log(pageNum);
                         var item = rows[i];
                 %>
                     <tr>
                         <td class="notice_list_num noti_none"><%= item.RNUM %></td>
-                        <td class="notice_list_title"><a onclick="javascript:location.href ='/notice_view?id=<%=row.id%>'"><%= item.title %></a></td>
+                        <td class="notice_list_title"><a onclick="javascript:location.href ='/notice_view?id=<%=item.id%>'"><%= item.title %></a></td>
                         <td class="notice_list_date"><%= item.date %></td>
                     </tr>
 
-                <%    
+                <%
                     }
                 }
                 %>
 
                 <% rows.forEach((row, index) => { %>
-                    <tr>
+                    <!-- <tr>
                         <td class="notice_list_num noti_none"><%= row.RNUM %></td>
                         <td class="notice_list_title"><a onclick="javascript:location.href ='/notice_view?id=<%=row.id%>'"><%= row.title %></a></td>
                         <td class="notice_list_date"><%= row.date %></td>
-                    </tr>
+                    </tr> -->
                 <% }) %>
-                <tr>
-                    <td colspan="5">
-                        <%
-                            for(var j = 0; j<rows.length/10; j++){
-                        %>
-                            [ <a herf="/notice/<%= j+1 %>"><%= j+1 %></a> ]
-                        <%
-                            }
-                        %>
-                    </td>
-                </tr>
+
                 <!-- <tr>
                     <td class="notice_list_num noti_none">210</td>
                     <td class="notice_list_title"><a href="">2022년 가정의달 플랜트러브 장바구니 출시 안내</a></td>
@@ -126,14 +120,19 @@
                 </tr> -->
             </tbody>
         </table>
-        <a href="notice_write" class="graybtn">글작성</a>
+        <a href="/notice_write" class="graybtn">글작성</a>
         <ul class="page">
             <li class="page_prev">
                 <a href="">
                     <img src="../img/kprev-icon.jpg" />
                 </a>
             </li>
-            <li class="page_active">
+            <% for(var j = 0; j<rows.length/8; j++){ %>
+                <li class="page_all">
+                    <a href="/notice/<%= j+1 %>"><%= j+1 %></a>
+                </li>
+            <% } %>
+            <!-- <li class="page_active">
                 <a href=""> 1 </a>
             </li>
             <li class="noti_none">
@@ -156,7 +155,7 @@
             </li>
             <li class="noti_none">
                 <a href=""> 8 </a>
-            </li>
+            </li> -->
             <li class="page_next">
                 <a href="">
                     <img src="../img/knext-icon.jpg" />
@@ -165,4 +164,5 @@
         </ul>
     </section>
 </main>
+<script src="../js/notice.js"></script>
 <script src="../js/top_btn.js"></script>

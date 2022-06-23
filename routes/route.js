@@ -33,7 +33,7 @@ router.post('/write', [check('content').isByteLength({
             let content = param['content'];
             let pw = param['pw'];
             db.insertMemo(type, title, content, pw, () => {
-                res.redirect('/notice');
+                res.redirect('/notice/1');
             });
         }
     }
@@ -74,33 +74,26 @@ router.post('/update', [check('content').isByteLength({
         });
     } else {
         db.updateMemoById(id, type, title, content, pw, () => {
-            res.redirect('/notice');
+            res.redirect('/notice/1');
         });
     }
 });
 
-// router.get('/notice_delete', (req, res) => {
-//     let id = req.query.id;
-//     db.deleteMemoById(id, () => {
-//         res.redirect('/notice');
-//     });
-// });
+router.get('/notice_delete', (req, res) => {
+    let id = req.query.id;
+    db.deleteMemoById(id, () => {
+        res.redirect('/notice');
+    });
+});
 
 router.get("/notice/:page", (req, res, next) => {
     var page = req.params.page;
-    pool
     db.countAll((count) => { //리스트 갯수 체크
         db.getAllMemos((rows) => {
-            res.render('notice_list', {rows: rows, count: count, page : page, leng : Object.keys(rows).length-1, pageNum : 10, pass : true});
+            res.render('notice_list', {rows: rows, count: count, page :page, leng : Object.keys(rows).length-1, pageNum : 8, pass : true});
         });
     });
 })
-
-//!!!!page test!!!!
-// router.get('/notice/:page', (req, res, next)=> {
-//     db.getAllMemos();
-// });
-//!!!!page test!!!!
 
 router.get("/notice_view", (req, res) => {
     let id = req.query.id;
