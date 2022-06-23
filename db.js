@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'b96b593c28ad68',
     password: '1234',
-    port: '3306',
-    database: 'team_project',
+    port: 'fe2977c9',
+    database: 'heroku_aa6031eb311b2b4',
     dateStrings: 'date'
 }); //보안상 다른 파일로 빼야됨
 
