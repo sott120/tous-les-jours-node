@@ -16,9 +16,6 @@ function getAllMemos(callback) {
     });
 }
 
-//!!!!page test!!!!
-//!!!!page test!!!!
-
 //리스트 갯수를 카운트하는 함수
 function countAll(callback){
     connection.query('SELECT COUNT(*) FROM notice',(err, result) => {
@@ -60,6 +57,17 @@ function deleteMemoById(id, callback) {
     });
 }
 
+/*************************** 회원가입 ********************************/
+
+//회원가입 정보를 받는 함수
+function insertCustom(user_id, user_pw, user_nm, user_gender, birth_year, birth_month, birth_day, phone, email, callback) {
+    connection.query(`INSERT INTO custom VALUES ('${user_id}', '${user_pw}','${user_nm}','${user_gender}','${birth_year}','${birth_month}','${birth_day}','${phone}','${email}')`, (err, result) => {
+        if (err) throw err;
+        callback();
+    });
+}
+
+
 
 module.exports = {
     getAllMemos,
@@ -68,4 +76,5 @@ module.exports = {
     getMemoById,
     updateMemoById,
     deleteMemoById,
+    insertCustom
 };

@@ -142,4 +142,30 @@ router.get("/signup", (req, res) => {
     res.render("signup");
 })
 
+router.post('/signup', (req, res, next)=> {
+    let errs = validationResult(req);
+    console.log(errs); //콘솔 에러 출력하기
+    if (errs['errors'].length > 0) {
+        //화면에 에러 출력하기
+        res.render('signup', {
+            errs: errs['errors']
+        });
+    } else {
+        let param = JSON.parse(JSON.stringify(req.body));
+        let user_id = param['user_id'];
+        let user_pw = param['user_pw'];
+        let user_nm = param['user_nm'];
+        let user_gender = param['user_gender'];
+        let birth_year = param['birth_year'];
+        let birth_month = param['birth_month'];
+        let birth_day = param['birth_day'];
+        let phone = param['phone'];
+        let email = param['email'];
+        db.insertCustom(user_id, user_pw, user_nm, user_gender, birth_year, birth_month, birth_day, phone, email, () => {
+            res.redirect('/');
+        });
+    }
+}
+);
+
 module.exports = router;
