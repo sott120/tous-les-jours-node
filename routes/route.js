@@ -82,7 +82,7 @@ router.post('/update', [check('content').isByteLength({
 router.get('/notice_delete', (req, res) => {
     let id = req.query.id;
     db.deleteMemoById(id, () => {
-        res.redirect('/notice');
+        res.redirect('/notice/1');
     });
 });
 
