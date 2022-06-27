@@ -57,6 +57,15 @@ function deleteMemoById(id, callback) {
     });
 }
 
+/************************** 공지사항 검색 ****************************/
+
+function searchMemo(keyword, callback){
+    console.log(keyword);
+    connection.query(`SELECT * FROM (SELECT *, @rownum:=@rownum+1 AS RNUM FROM notice, (SELECT @rownum :=0 as R)NUM)SUB WHERE title LIKE '%${keyword}%' `, (err, result) => {
+        if (err) throw err;
+        callback();
+});
+}
 /*************************** 회원가입 ********************************/
 
 //회원가입 정보를 받는 함수
@@ -76,5 +85,6 @@ module.exports = {
     getMemoById,
     updateMemoById,
     deleteMemoById,
+    searchMemo,
     insertCustom
 };

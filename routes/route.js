@@ -87,7 +87,7 @@ router.get('/notice_delete', (req, res) => {
 });
 
 router.get("/notice/:page", (req, res, next) => {
-    var page = req.params.page;
+    let page = req.params.page;
     db.countAll((count) => { //리스트 갯수 체크
         db.getAllMemos((rows) => {
             res.render('notice_list', {rows: rows, count: count, page :page, leng : Object.keys(rows).length-1, pageNum : 8, pass : true});
@@ -141,6 +141,20 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
     res.render("signup");
 })
+
+//검색기능 테스트
+
+router.get("/search", (req, res, next) => {
+    let keyword = req.query.search_txt;
+    db.searchMemo(keyword, (rows) => {
+        res.render('/notice_list_search', {rows:rows, keyword:keyword});
+    });
+})
+
+// router.get("/notice_list_search", (req,res)=>{
+//     res.render('notice_list_search')
+// })
+//검색기능 테스트
 
 router.post('/signup', (req, res, next)=> {
     let errs = validationResult(req);
