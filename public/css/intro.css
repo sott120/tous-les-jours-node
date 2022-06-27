@@ -999,6 +999,17 @@
     }
 }
 
+/*--------------------media query width 870px--------------------*/
+@media only screen and (max-width: 870px){
+    .intro_vid video {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: 234px;
+    }
+}
+
 /*--------------------media query width 767px--------------------*/
 @media only screen and (max-width: 767px) {
     .int_none {
