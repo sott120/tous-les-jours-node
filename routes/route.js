@@ -146,14 +146,14 @@ router.get("/signup", (req, res) => {
 
 router.get("/search", (req, res, next) => {
     let keyword = req.query.search_txt;
-    db.searchMemo(keyword, (rows) => {
-        res.render('/notice_list_search', {rows:rows, keyword:keyword});
+    db.countAll((count) => {
+        db.searchMemo(keyword, (rows) => {
+            res.render('notice_list_search', {rows:rows, count:count, keyword:keyword});
+            console.log(rows);
+        });
     });
 })
 
-// router.get("/notice_list_search", (req,res)=>{
-//     res.render('notice_list_search')
-// })
 //검색기능 테스트
 
 router.post('/signup', (req, res, next)=> {

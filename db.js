@@ -61,11 +61,13 @@ function deleteMemoById(id, callback) {
 
 function searchMemo(keyword, callback){
     console.log(keyword);
-    connection.query(`SELECT * FROM (SELECT *, @rownum:=@rownum+1 AS RNUM FROM notice, (SELECT @rownum :=0 as R)NUM)SUB WHERE title LIKE '%${keyword}%' `, (err, result) => {
+    connection.query(`SELECT * FROM (SELECT *, @rownum:=@rownum+1 AS RNUM FROM notice, (SELECT @rownum :=0 as R)NUM)SUB WHERE title LIKE '%${keyword}%' ORDER BY id DESC`, (err, rows, fields) => {
         if (err) throw err;
-        callback();
+        callback(rows);
 });
 }
+
+
 /*************************** 회원가입 ********************************/
 
 //회원가입 정보를 받는 함수
