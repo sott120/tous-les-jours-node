@@ -142,8 +142,7 @@ router.get("/signup", (req, res) => {
     res.render("signup");
 })
 
-//검색기능 테스트
-
+//검색기능
 router.get("/search", (req, res, next) => {
     let keyword = req.query.search_txt;
     db.countAll((count) => {
@@ -154,8 +153,7 @@ router.get("/search", (req, res, next) => {
     });
 })
 
-//검색기능 테스트
-
+//회원가입 데이터 받기
 router.post('/signup', (req, res, next)=> {
     let errs = validationResult(req);
     console.log(errs); //콘솔 에러 출력하기
@@ -180,6 +178,6 @@ router.post('/signup', (req, res, next)=> {
         });
     }
 }
-);
+); 
 
 module.exports = router;
