@@ -88,12 +88,12 @@ var absoluteTop3 = window.pageYOffset + boxTop3;
 
 function navChange() {
     
-    if (window.pageYOffset + 120 >= absoluteTop1 && window.pageYOffset + 500 < absoluteTop2 ) {
+    if (window.pageYOffset + 120 >= absoluteTop1 && window.pageYOffset + 700 < absoluteTop2 ) {
         disappear(1);
         disappear(2);
         appear(0);
     }
-    if (window.pageYOffset + 500 >= absoluteTop2  && window.pageYOffset + 1100 < absoluteTop3 ) {
+    if (window.pageYOffset + 700 >= absoluteTop2  && window.pageYOffset + 1100 < absoluteTop3 ) {
         disappear(0);
         disappear(2);
         appear(1);
