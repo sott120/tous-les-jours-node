@@ -1,7 +1,6 @@
 .login{
     position: relative;
     overflow: hidden;
-    /*margin-top: 120px;*/
 }
 
 .login_title{
@@ -112,7 +111,7 @@
     width: calc(33.333% - 3px);
     border: 1px solid #ddd;
     border-radius: 3px;
-    padding: 15px;
+    padding: 12px;
     box-sizing: border-box;
 }
 
@@ -123,7 +122,7 @@
     font-size: 13px;
 }
 
-.login_wrap>button{
+.login_btn {
     display: block;
     color: #fff;
     width: 100%;
@@ -140,25 +139,49 @@
     border-radius: 3px;
 }
 
-.bor_none{
+.login .bor_none{
     border: 0 !important;
 }
 
-.no{
+.login .no{
     color: red;
     font-size: 14px;
     display: none;
 }
 
 
+
+
+@media only screen and (max-width: 1440px) {
+    .login_h2{
+        font-size: 52px;
+    }
+
+}
+
+@media only screen and (max-width: 989px){
+
+    .login_h2{
+        font-size: 45px;
+    }
+
+}
+
+
 @media only screen and (max-width: 767px) {
+
     .login_btn {
         margin-bottom: 70px !important;
+    }
+
+    .login_h2{
+        font-size: 34px;
     }
 }
 
 
 @media only screen and (max-width: 570px) {
+
     .login_wrap {
         max-width: calc(100% - 60px);
         margin: 0 auto 20px;
@@ -172,6 +195,7 @@
 
 
 @media only screen and (max-width: 480px) {
+
     .login_wrap {
         max-width: calc(100% - 40px);
     }

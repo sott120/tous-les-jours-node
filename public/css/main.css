@@ -338,26 +338,35 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comuevt {
+.main_sec3 > .main_arti3 > ul > li > .main_comuevt .main_eventimg {
   background-image: url(../img/main_nav_event.png);
+  background-size: cover;
+  filter: brightness(60%);
   transition: all 0.5s ease-in-out;
+  height: 100%;
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comusto {
+.main_sec3 > .main_arti3 > ul > li > .main_comusto .main_storeimg {
   background-image: url(../img/main_nav_store.png);
+  background-size: cover;
+  filter: brightness(60%);
   transition: all 0.5s ease-in-out;
+  height: 100%;
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comudvy {
+.main_sec3 > .main_arti3 > ul > li > .main_comudvy .main_delivimg {
   background-image: url(../img/main_nav_deliv.png);
+  background-size: cover;
+  filter: brightness(60%);
   transition: all 0.5s ease-in-out;
+  height: 100%;
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comuevt:hover {
-  background-image: url(../img/main_nav_event_hov.png);
+.main_sec3 > .main_arti3 > ul > li > .main_comuevt .main_eventimg:hover {
+  filter: brightness(30%);
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comusto:hover {
-  background-image: url(../img/main_nav_store_hov.png);
+.main_sec3 > .main_arti3 > ul > li > .main_comusto .main_storeimg:hover {
+  filter: brightness(30%);
 }
-.main_sec3 > .main_arti3 > ul > li > .main_comudvy:hover {
-  background-image: url(../img/main_nav_deliv_hov.png);
+.main_sec3 > .main_arti3 > ul > li > .main_comudvy .main_delivimg:hover {
+  filter: brightness(20%);
 }
 .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt {
   position: absolute;
@@ -952,12 +961,12 @@
 
   /* 섹션 2 */
   .main_sec2 {
-    height: 124vw;
+    height: 157vw;
     padding: 0px 30px 0;
   }
   .main_sec2 > .main_arti2 {
     max-width: 707px;
-    height: 124vw;
+    height: 178vw;
     padding-top: 54px;
   }
   .main_sec2 > .main_arti2::after {
@@ -978,25 +987,28 @@
   }
   .main_sec2 > .main_arti2 > .main_menuwrap {
     width: 100%;
-    height: 123vw;
+    height: 155vw;
     display: block;
   }
   .main_sec2 > .main_arti2 > .main_menuwrap > li {
     width: 100%;
     height: 50vw;
   }
-  .main_sec2 > .main_arti2 > .main_menuwrap > li:last-child {
+  /* .main_sec2 > .main_arti2 > .main_menuwrap > li:last-child {
     display: none;
-  }
+  } */
   .main_sec2 > .main_arti2 > .main_menuwrap > li:nth-child(2) {
     margin-top: 0px;
   }
-
+  .main_sec2 > .main_arti2 > .main_menuwrap > li:nth-child(3) {
+    width: 100%;
+    margin-top: 0px;
+  }
   div.main_drinktxt {order: 1}
   img.main_drink {order: 2}
   
   .main_sec2 > .main_arti2 > .main_menuwrap > li > a {
-    width: 100%; height: 65vw;
+    width: 100%; height: 55vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1015,6 +1027,9 @@
   }
   .main_sec2 > .main_arti2 > .main_menuwrap .main_drink {
     width: 29.57%;
+  }
+  .main_sec2 > .main_arti2 > .main_menuwrap .main_cake {
+    width: 35.8%;
   }
   .main_sec2 > .main_arti2 > .main_menuwrap .main_menutxt {
     margin-left: 15vw;
@@ -1044,30 +1059,24 @@
     height: 40vw;
   }
   .main_sec3 > .main_arti3 > ul > li > a {
-    background-size: cover;
     height: 40vw;
   }
-  .main_sec3 > .main_arti3 > ul > li > .main_comuevt {
+  .main_sec3 > .main_arti3 > ul > li > .main_comuevt .main_eventimg {
     background-image: url(../img/main_nav_event_mob.png);
+    background-size: cover;
   }
-  .main_sec3 > .main_arti3 > ul > li > .main_comusto {
+  .main_sec3 > .main_arti3 > ul > li > .main_comusto .main_storeimg {
     background-image: url(../img/main_nav_store_mob.png);
+    background-size: cover;
   }
-  .main_sec3 > .main_arti3 > ul > li > .main_comudvy {
+  .main_sec3 > .main_arti3 > ul > li > .main_comudvy .main_delivimg {
     background-image: url(../img/main_nav_deliv_mob.png);
+    background-size: cover;
   }
-  .main_sec3 > .main_arti3 > ul > li > .main_comuevt:hover {
-    background-image: url(../img/main_nav_event_mobact.png);
-  }
-  .main_sec3 > .main_arti3 > ul > li > .main_comusto:hover {
-    background-image: url(../img/main_nav_store_mobact.png);
-  }
-  .main_sec3 > .main_arti3 > ul > li > .main_comudvy:hover {
-    background-image: url(../img/main_nav_deliv_mobact.png);
-  }
+
   .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > h5 {
     font-size: 36px;
-    margin-bottom: 17px;
+    margin-bottom: 5px;
   }
   .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > p {
     font-size: 16px;
@@ -1176,7 +1185,7 @@
   .main_bottom {
     width: 100%;
     height: 360px;
-    margin-top: 10vw;
+    margin-top: 0;
   }
   .main_bottom > .main_botnav {
     width: 100%;
@@ -1186,20 +1195,21 @@
   .main_bottom > .main_botnav > li {
     width: 100%; height: 120px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-betweens;
     align-items: center;
-    padding: 34px 30px;
+    padding: 26px 30px;
     box-sizing: border-box;
   }
   .main_bottom > .main_botnav > li > .main_bottxt {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding-right: 10px;
     box-sizing: border-box;
   }
   .main_bottom > .main_botnav > li > .main_bottxt > h6 {
+    margin-bottom: 5px;
     font-size: 14px;
   }
   .main_bottom > .main_botnav > li > .main_bottxt > p {
@@ -1243,7 +1253,7 @@
   }
   .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > h5 {
     font-size: 26px;
-    margin-bottom: 17px;
+    margin-bottom: 5px;
   }
   .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > p {
     font-size: 14px;
@@ -1260,14 +1270,17 @@
   }
   .main_sec4 > .main_arti4 {
     padding-top: 50px;
-}
+  }
   .main_sec5 > .main_arti5 {
     height: 143vw;
     padding-top: 50px;
   }
   .main_sec5 > .main_arti5 > .main_franchise > .main_frntxt {
     font-size: 14px;
-}
+  }
+  .main_sec6 {
+    height: 180vw;
+  }
   .main_sec6 > .main_arti6 {
     padding-top: 50px;
   }
@@ -1287,6 +1300,7 @@
   }
   .main_bottom > .main_botnav > li {
     height: 95px;
+    padding: 14px 14px;
   }
   .main_botbtn > .main_bothref > .main_botcircle {
     width: 28px;
@@ -1303,5 +1317,95 @@
   .main_botbtn > .main_bothref > .main_botcircle {
     width: 28px;
     height: 28px;
+  }
+}
+
+/*--------------------media query width 280px--------------------*/
+@media only screen and (max-width: 280px) {
+  .main_nav > li > a > p {
+    font-size: 8px;
+  }
+  .main_subject1 > p {
+    font-size: 20px;
+  }
+  .main_sec2 > .main_arti2 > .main_menuwrap .main_menutxt > h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .main_sec2 > .main_arti2 > .main_menuwrap .main_menutxt > p {
+    font-size: 12px;
+  }
+  .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > h5 {
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+  .main_sec3 > .main_arti3 > ul > li > a > .main_comutxt > p {
+    font-size: 12px;
+  }
+  .main_sec4 > .main_arti4 > .main_recruit > .main_recrutxt {
+    font-size: 12px;
+  }
+  .main_subject2 > h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .main_btnmob {
+    margin: 35px auto 65px;
+  }
+  .main_sec4 > .main_arti4 {
+    padding-top: 50px;
+  }
+  .main_sec5 > .main_arti5 {
+    height: 143vw;
+    padding-top: 50px;
+  }
+  .main_sec5 > .main_arti5 > .main_franchise > .main_frntxt {
+    font-size: 14px;
+  }
+  .main_sec6 {
+    height: 180vw;
+  }
+  .main_sec6 > .main_arti6 {
+    padding-top: 50px;
+  }
+  .main_sec6 > .main_arti6 > .main_new > h6 > a {
+    font-size: 10px;
+    margin: 4px 0 0px;
+    letter-spacing: -1;
+  }
+  .main_bottom {
+    height: 287px;
+  }
+  .main_bottom > .main_botnav > li > .main_bottxt > h6 {
+    font-size: 12px;
+  }
+  .main_bottom > .main_botnav > li > .main_bottxt > p {
+    font-size: 11px;
+  }
+  .main_bottom > .main_botnav > li {
+    height: 95px;
+    padding: 14px 14px;
+  }
+  .main_botbtn > .main_bothref > .main_botcircle {
+    width: 28px;
+    height: 28px;
+  }
+  .main_botbtn > .main_bothref > .main_botcircle > img {
+    width: 12px;
+    height: 12px;
+  }
+  .main_botbtn > .main_bothref > .main_botcircle::after {
+    width: 40px;
+    height: 40px;
+  }
+  .main_botbtn > .main_bothref > .main_botcircle {
+    width: 28px;
+    height: 28px;
+  }
+  .main_btnmob > p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
   }
 }

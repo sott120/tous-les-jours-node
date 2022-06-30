@@ -1038,6 +1038,8 @@
     }
 
     .mainbnr_txt {
+        position: relative;
+        top: -1px;
         padding-top: 60px;
     }
 
