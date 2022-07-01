@@ -1,3 +1,14 @@
+//쓰로틀링 코드
+// var timer;
+// document.querySelector('.body').addEventListener('scroll', function (e) {
+//   if (!timer) {
+//     timer = setTimeout(function() {
+//       timer = null;
+//       // 실행할 코드 내용
+//     }, 200);
+//   }
+// });
+
 if (matchMedia("screen and (max-width: 767px)").matches) {
 } else {
   window.onresize = function () {
